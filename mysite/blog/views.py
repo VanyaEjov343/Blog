@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from serializers import PostSerializer
 from .models import Post
 
 from django.views.generic import ListView, DetailView
@@ -10,3 +11,8 @@ class BlogListView(ListView):
 
 class PostDetailsView(DetailView):
     model = Post
+    template_name = 'post_detail.html'
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all().order_by('')
+    serializer_class = PostSerializer
