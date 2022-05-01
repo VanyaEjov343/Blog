@@ -1,6 +1,6 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
-
+{ % load crispy_forms_tag %}
 {% block content %}
   {% for post in object_list %}
     <div class="post-entry">

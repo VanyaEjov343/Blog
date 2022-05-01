@@ -23,4 +23,5 @@ admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
+    path('api-auth/', include('blog.urls')),
 ]
